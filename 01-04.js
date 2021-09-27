@@ -51,7 +51,9 @@ function init() {
     plane.rotation.x = -0.5 * Math.PI;
     plane.position.set(15, 0, 0);
 
-    Cubo = [];   // Definir un array unidimensional
+       // Definir un array unidimensional
+    
+  /* Cubo = [];
     Cubo.push(cubo(4, 4, 4, 0xFFDD00, 'Lambert', false));
     Cubo.push(cubo(4, 4, 4, 0xFF5733, 'Lambert', false));
     Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Lambert', false)); 
@@ -62,7 +64,16 @@ function init() {
     Cubo[1].position.set(0,8, 0);
     Cubo[2].position.set(0,12, 0);
     Cubo[3].position.set(0,16, 0);
-    Cubo[4].position.set(0,20, 0);
+    Cubo[4].position.set(0,20, 0);*/
+    
+    Cubo = [];
+    for(var i=0; i<5; i++)
+      {
+       Cubo.push(cubo(4, 4, 4, 0xFFDD00, 'Lambert', false));
+       Cubo[i].position.set(0, 4+(i*4), 0);
+       }
+    
+
 
     var light = new THREE.PointLight( 0xFFFF00 );  
                                          
