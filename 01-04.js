@@ -1,4 +1,4 @@
-// create a scene, that will hold all our elements such as objects, cameras and lights.
+ // create a scene, that will hold all our elements such as objects, cameras and lights.
     var scene = new THREE.Scene();
 
 function cubo(x,y,z,color,material, alambrado){
@@ -27,7 +27,7 @@ function cubo(x,y,z,color,material, alambrado){
     return cube;
 }
 function init() {
-
+   
     // create a camera, which defines where we're looking at.
     var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
@@ -53,16 +53,24 @@ function init() {
 
     Cubo = [];   // Definir un array unidimensional
     Cubo.push(cubo(4, 4, 4, 0xFFDD00, 'Lambert', false));
-    Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Lambert', false));
+    Cubo.push(cubo(4, 4, 4, 0xFF5733, 'Lambert', false));
+    Cubo.push(cubo(4, 4, 4, 0xFF0000, 'Lambert', false)); 
+    Cubo.push(cubo(4, 4, 4, 0x900C3F , 'Lambert', false));
+    Cubo.push(cubo(4, 4, 4, 0x581845  , 'Lambert', false));
 
-    Cubo[0].position.set(-4, 9, 0);
-    Cubo[1].position.set(-4, 18, 0);
+    Cubo[0].position.set(0, 4, 0);
+    Cubo[1].position.set(0,8, 0);
+    Cubo[2].position.set(0,12, 0);
+    Cubo[3].position.set(0,16, 0);
+    Cubo[4].position.set(0,20, 0);
 
     var light = new THREE.PointLight( 0xFFFF00 );  
-
+                                         
     light.position.set( -10, 30, 20 );             
     scene.add( light );                 
+    
 
+    
 
     // position and point the camera to the center of the scene
     camera.position.set(-30, 40, 30);
@@ -73,4 +81,4 @@ function init() {
 
     // render the scene
     renderer.render(scene, camera);
-} 
+}
